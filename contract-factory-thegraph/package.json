@@ -1,0 +1,18 @@
+{
+    "scripts": {
+        "codegen": "graph codegen",
+        "build": "graph build",
+        "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ test/thegraph",
+        "create-local": "graph create --node http://localhost:8020/ test/thegraph",
+        "remove-local": "graph remove --node http://localhost:8020/ test/thegraph",
+        "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 test/thegraph"
+    },
+    "dependencies": {
+        "@graphprotocol/graph-cli": "0.15.0",
+        "@graphprotocol/graph-ts": "0.15.0",
+        "@openzeppelin/contracts": "^2.3.0",
+        "fake": "^0.2.2",
+        "faker": "^4.1.0",
+        "truffle": "^5.0.40"
+    }
+}

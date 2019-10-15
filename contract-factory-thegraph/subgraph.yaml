@@ -1,0 +1,42 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: CarShop
+    network: mainnet
+    source:
+      address: "0xf2Dee5975A808f16f93bf4Fd55aB5481a8B20497"
+      abi: CarShop
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        - CreateChildContract
+      abis:
+        - name: CarShop
+          file: ./abis/CarShop.json
+      eventHandlers:
+        - event: CreateChildContract(string,string,address)
+          handler: handleCreateChildContract
+      file: ./src/mappings/CarShop.ts
+templates:
+  - name: CarAsset
+    kind: ethereum/contract
+    network: mainnet
+    source:
+      abi: CarAsset
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.1
+      language: wasm/assemblyscript
+      file: ./src/mappings/CarAsset.ts
+      entities:
+        - CarAsset
+      abis:
+        - name: CarAsset
+          file: ./abis/CarAsset.json
+      eventHandlers:
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred

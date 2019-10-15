@@ -1,0 +1,56 @@
+[
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "name": "brand",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "name": "model",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "name": "contractAddress",
+                "type": "address"
+            }
+        ],
+        "name": "CreateChildContract",
+        "type": "event"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "brand",
+                "type": "string"
+            },
+            {
+                "name": "model",
+                "type": "string"
+            }
+        ],
+        "name": "createChildContract",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getDeployedChildContracts",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address[]"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    }
+]

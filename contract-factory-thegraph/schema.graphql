@@ -1,0 +1,10 @@
+type CreateChildContractEntity @entity {
+  id: ID!
+  brand: String! # string
+  model: String! # string
+}
+
+type OwnershipTransferredEntity @entity {
+  id: ID!
+  newowner: Bytes! # string
+}
