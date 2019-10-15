@@ -1,3 +1,4 @@
+import { CarAsset as CarAssetTemplate } from "../../generated/templates"
 import { CarAsset } from "../../generated/templates/CarAsset/CarAsset"
 import { CarShop, CreateChildContract } from "../../generated/CarShop/CarShop"
 import { CreateChildContractEntity } from "../../generated/schema"
@@ -13,5 +14,5 @@ export function handleCreateChildContract(event: CreateChildContract): void {
     entity.model = event.params.model
 
     entity.save()
-    CarAsset.bind(event.params.contractAddress);
+    CarAssetTemplate.create(event.params.contractAddress);
 }
